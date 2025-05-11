@@ -21,9 +21,9 @@ const ChatForm = ({ chatHistory, setquestion, generateResponse, setchatHistory }
     }
 
     return (
-        <form className='relative flex items-center w-full' onSubmit={handleFormSubmit}>
+        <form className='relative flex items-center w-full my-3  md:mb-4' onSubmit={handleFormSubmit}>
 
-            <input className=' border-[1px] border-white h-full rounded-full text-white py-3 px-5 w-full'
+            <input className=' border-[1px] border-white h-full rounded-full text-white py-3 pl-5 pr-24 w-full'
                 ref={inputRef}
                 // value={question}
                 onChange={(e) => setquestion(e.target.value)}

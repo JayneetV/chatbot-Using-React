@@ -16,7 +16,7 @@ function App() {
     const formattedHistory = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
 
     const response = await axios({
-      url: "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=AIzaSyDVzoFmoJlFIVOUskR6NReHl4D28cjt8SM",
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDVzoFmoJlFIVOUskR6NReHl4D28cjt8SM",
       method: "post",
       data: {
         "contents": [{
@@ -37,10 +37,10 @@ function App() {
         
         <div className='text-white font-bold text-2xl py-2'>AI-Based Conversational Tool</div>
 
-        <div className='w-[70%] h-full rounded-md flex flex-col gap-2 justify-between items-center p-4'>
+        <div className='w-full md:w-[70%] h-full rounded-md flex flex-col gap-2 justify-between items-center px-2 md:px-0'>
 
           {/* Chat body */}
-          <div className='text-white overflow-y-auto h-[75dvh] w-full flex flex-col gap-6 chat-body'>
+          <div className='text-white overflow-y-auto h-[85dvh] md:h-[76dvh] w-full flex flex-col gap-6 chat-body'>
             {/* Render the chat history dynamically */}
             {chatHistory.map((chat, index) => (
               <ChatMessage key={index} chat={chat} />
